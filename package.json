@@ -1,0 +1,11 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "server test",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "Ojingiri Samuel",
+  "license": "ISC"
+}
