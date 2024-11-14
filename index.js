@@ -12,7 +12,10 @@ setInterval(async ()=>{
 	const res = await req.text();
 	console.log(res);
 	const d = new Date();
-	await fs.appendFileSync("a.txt",`loaded ${n++} times\n`,"UTF-8");
+	await fs.appendFileSync("a.txt",`loaded ${n++} times\n${d.getHours()}
+${d.getMinutes()} 
+${d.getSeconds()} 
+${d.getTime()}\n\n`,"UTF-8");
        }catch(e){
         console.log(e);
 	
