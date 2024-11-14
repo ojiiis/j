@@ -1,9 +1,11 @@
 const http = require("http");
 const fs = require("fs");
-com = async (req,res)=>{
+com =  (req,res)=>{
 if(req.url == "/a"){
-  const a = await fs.readFileSync("a.txt");
-  console.log(a);
+  const a = fs.readFileSync("a.txt","UTF-8");
+  //console.log(a);
+  res.write(a);
+  res.end();
   
 }
 res.statusCode = 200;
@@ -17,12 +19,12 @@ setInterval(async ()=>{
 	const res = await req.text();
 	console.log(res);
 	const d = new Date();
-	await fs.appendFileSync("a.txt",`loaded ${n++} times\n`,"UTF-8");
+	fs.appendFileSync("a.txt",`loaded ${n++} times\n`,"UTF-8");
        }catch(e){
         console.log(e);
 	
 	}
-      	console.log(`loaded ${n++} times`);
+      	//console.log(`loaded ${n++} times`);
 },10000);
 const server = http.createServer(com);
 server.listen(8080);
