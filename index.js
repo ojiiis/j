@@ -11,6 +11,7 @@ setInterval(async ()=>{
 	const req = await fetch('http://localhost:8080');
 	const res = await req.text();
 	console.log(res);
+	const d = new Date();
 	await fs.appendFileSync("a.txt",`loaded ${n++} times\n`,"UTF-8");
        }catch(e){
         console.log(e);
